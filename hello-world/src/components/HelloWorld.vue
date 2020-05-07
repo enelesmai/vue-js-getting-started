@@ -1,6 +1,5 @@
 <template>
-  <div class="hello container">
-    <h1>{{ msg }}</h1> 
+  <div class="container">
     <h3>Users:</h3>
      <table class="table">
       <thead>
@@ -32,9 +31,6 @@ export default {
     return {
       users: null,
     };
-  },
-  props: {
-    msg: String
   },
   created: function() {
     axios
