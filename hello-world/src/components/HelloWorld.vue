@@ -5,10 +5,24 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'HelloWorld',
+  data() {
+    return {
+      users: null,
+    };
+  },
   props: {
     msg: String
+  },
+  created: function() {
+    axios
+      .get('https://jsonplaceholder.typicode.com/users')
+      .then(res => {
+        this.users = res.data;
+      })
   }
 }
 </script>
